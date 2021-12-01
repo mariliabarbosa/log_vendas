@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log de Vendas</title>
+</head>
+<body>
+    <h1>Log de Vendas</h1>
+    <table>
+        {% for nome in listaVendas %}
+        <tr>
+            <td>{{vendas}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <form action="/registrar" method="post">
+        <label for="qtd">Quantidade</label>
+        <input type="number" id="qtd">
+        <button type="submit">Salvar</button>
+    </form>
+</body>
+</html>
