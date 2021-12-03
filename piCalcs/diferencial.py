@@ -7,10 +7,9 @@ def funcaoCusto(q):
 
 
 class Financeiro:
-    def __init__(self, pVenda):
+    def __init__(self):
         self.custos = funcaoCusto(q)
-        self.vendas = 0
-        self.precoVenda = pVenda
+        self.precoVenda = 21000
         self.lucro = self.precoVenda*q - self.custos
 
     def raizes(self):
