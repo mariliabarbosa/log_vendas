@@ -63,25 +63,27 @@
    </head>
    <body>
       <div class = "Titulo">
-         <h1>Trabalho Integrado</h1>
+         <h1>Lucrinho</h1>
       </div>
-      {% if valorParaLucroMax > 0 %}
-      <p>Você vendeu {{qtd}} toneladas com sucesso. Faltam {{valorParaLucroMax}} toneladas para você atingir seu lucro máximo.</p>
+      {% if valor_para_lucro_max > 0 %}
+      <p>Você vendeu {{qtd}} mil toneladas com sucesso. Faltam {{valor_para_lucro_max}} mil toneladas para você atingir seu lucro máximo.</p>
       {% else %}
-      <p>Você vendeu {{qtd}} toneladas com sucesso. Você já atingiu seu lucro máximo!</p>
+      <p>Você vendeu {{qtd}} mil toneladas com sucesso. Você já atingiu seu lucro máximo!</p>
       {% endif %}
-      <p></p>
+
       <table>
          <tr>
             <td>Quantidade</td>
          </tr>
-         {% for venda in listaVendas %}
+         {% for venda in lista_vendas %}
          <tr>
             <td>
-               {{venda.QTD}} toneladas
+               {{venda.QTD}} mil toneladas
             </td>
          </tr>
          {% endfor %}
       </table>
+
+      <a href="/"><p>Voltar para principal</p></a>
    </body>
 </html>

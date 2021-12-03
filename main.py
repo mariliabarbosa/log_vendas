@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 import pymysql
 
-import piCalcs.diferencial
+import picalcs.derivada
 
 db = pymysql.connect(host="b96az1avpnrw5cohpooj-mysql.services.clever-cloud.com",
                      user="upj2vrn16ahshjxl",
@@ -23,19 +23,19 @@ def registrar_venda():
     db.commit()
 
     cursor.execute("SELECT QTD FROM VENDAS")
-    listaVendas = cursor.fetchall()
+    lista_vendas = cursor.fetchall()
 
-    p = piCalcs.diferencial.Financeiro()
-    lucroMax = p.calcMax()
+    p = picalcs.derivada.Financeiro()
+    lucro_max = p.calc_max()
 
-    somaVendas = 0
+    soma_vendas = 0
 
-    for venda in listaVendas:
-        somaVendas += venda.get('QTD')
+    for venda in lista_vendas:
+        soma_vendas += venda.get('QTD')
 
-    valorParaLucroMax = lucroMax[0] - somaVendas
+    valor_para_lucro_max = round(lucro_max[0] - soma_vendas, 2)
 
-    return render_template('resultado.html', listaVendas=listaVendas, qtd=qtd, valorParaLucroMax= valorParaLucroMax)
+    return render_template('resultado.html', lista_vendas=lista_vendas, qtd=qtd, valor_para_lucro_max= valor_para_lucro_max)
 
 app.run(debug=True)
 

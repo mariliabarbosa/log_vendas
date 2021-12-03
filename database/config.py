@@ -1,4 +1,3 @@
-import export as export
 import pymysql
 
 db = pymysql.connect(host="b96az1avpnrw5cohpooj-mysql.services.clever-cloud.com",
